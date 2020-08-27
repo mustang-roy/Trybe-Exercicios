@@ -9,7 +9,9 @@ var botaoIsZero = document.querySelector("#isitzero");
 var botaoTriangulo = document.querySelector("#triangulo");
 var botaoPecaXadrez = document.querySelector("#pecaxadrez");
 var botaoNotamene = document.querySelector("#notamene");
-
+var botaoEpar = document.querySelector("#epar");
+var botaoEImpar = document.querySelector("#eimpar");
+var botaoLucro = document.querySelector("#calclucro")
 
 botaoSoma.addEventListener("click", adicao);
 botaoSub.addEventListener("click",subtracao);
@@ -22,8 +24,9 @@ botaoIsZero.addEventListener("click", valueOrZero);
 botaoTriangulo.addEventListener("click", checkTriangulo);
 botaoPecaXadrez.addEventListener("click", movChessPiece);
 botaoNotamene.addEventListener("click", converterNota);
-
-
+botaoEpar.addEventListener("click",bonusPar);
+botaoEImpar.addEventListener("click",bonusImpar);
+botaoLucro.addEventListener("click", calcLucro);
 
 
 function adicao() {
@@ -207,4 +210,56 @@ function converterNota() {
 
   let result = document.querySelector("#resultadonotamene");
   result.textContent = notaLetter;
+}
+
+function bonusPar() {
+  let elementoscomp = [];
+  elementoscomp.push(Number(document.getElementById('elemento1epar').value));
+  elementoscomp.push(Number(document.getElementById('elemento2epar').value));
+  elementoscomp.push(Number(document.getElementById('elemento3epar').value));
+
+  let verificaPar = false;
+  
+  if (elementoscomp[0]%2 === 0 ||
+      elementoscomp[1]%2 === 0 ||
+      elementoscomp[2]%2 === 0 ) {
+    verificaPar = true;
+  }
+
+  let result = document.querySelector("#resultadoepar");
+  result.textContent = verificaPar;
+}
+
+function bonusImpar() {
+  let elementoscomp = [];
+  elementoscomp.push(Number(document.getElementById('elemento1eimpar').value));
+  elementoscomp.push(Number(document.getElementById('elemento2eimpar').value));
+  elementoscomp.push(Number(document.getElementById('elemento3eimpar').value));
+
+  let verificaImpar = false;
+  
+  if (elementoscomp[0]%2 === 1 ||
+      elementoscomp[1]%2 === 1 ||
+      elementoscomp[2]%2 === 1 ) {
+    verificaImpar = true;
+  }
+
+  let result = document.querySelector("#resultadoeimpar");
+  result.textContent = verificaImpar;
+}
+
+function calcLucro() {
+  let custoProduto = Number(document.getElementById('elemento1calclucro').value);
+  let precoVendaProduto = Number(document.getElementById('elemento2calclucro').value);
+
+  let valorLucro = null;
+  
+  if (custoProduto<0 || precoVendaProduto<0) {
+    valorLucro = "Valor negativo";
+  } else {
+    valorLucro = (precoVendaProduto - custoProduto*1.2)*1000;
+  }
+
+  let result = document.querySelector("#resultadocalclucro");
+  result.textContent = valorLucro;
 }
