@@ -3,10 +3,11 @@ var botaoSub = document.querySelector("#subtracao");
 var botaoMult = document.querySelector("#multiplicacao");
 var botaoDiv = document.querySelector("#divisao");
 var botaoMod = document.querySelector("#module");
-var botaoComp2 = document.querySelector("#compare2")
-var botaoComp3 = document.querySelector("#compare3")
-var botaoIsZero = document.querySelector("#isitzero")
-var botaoTriangulo = document.querySelector("#triangulo")
+var botaoComp2 = document.querySelector("#compare2");
+var botaoComp3 = document.querySelector("#compare3");
+var botaoIsZero = document.querySelector("#isitzero");
+var botaoTriangulo = document.querySelector("#triangulo");
+var botaoPecaXadrez = document.querySelector("#pecaxadrez");
 
 
 botaoSoma.addEventListener("click", adicao);
@@ -17,7 +18,9 @@ botaoMod.addEventListener("click",modulo);
 botaoComp2.addEventListener("click",compareDois);
 botaoComp3.addEventListener("click",compareTres);
 botaoIsZero.addEventListener("click", valueOrZero);
-botaoTriangulo.addEventListener("click", checkTriangulo)
+botaoTriangulo.addEventListener("click", checkTriangulo);
+botaoPecaXadrez.addEventListener("click", movChessPiece);
+
 
 
 
@@ -103,7 +106,7 @@ function valueOrZero() {
 
   let result = document.querySelector("#resultadoisitzero");
   result.textContent = valor;
-}
+};
 
 function checkTriangulo() {
   let elementoscomp = [];
@@ -125,4 +128,44 @@ function checkTriangulo() {
 
   let result = document.querySelector("#resultadotriangulo");
   result.textContent = resultadoBooleano;
+};
+
+function movChessPiece() {
+  
+  let elementoPeca = document.getElementById("elementopecaxadrez").value;
+
+  let moveStyle = null;
+
+  switch (elementoPeca) {
+    case 'pawn':
+      moveStyle = "vertically forward one square";
+      break;
+
+    case 'rook':
+      moveStyle = "horizontally or vertically";
+      break;
+
+    case 'bishop':
+      moveStyle = "diagonally";
+      break;
+
+    case 'knight':
+      moveStyle = "in an ‘L’ shape’";
+      break;
+
+    case 'queen':
+      moveStyle = "diagonally and horizontally";
+      break;
+    
+    case 'king':
+      moveStyle = "one square in any direction";
+      break;
+  
+    default:
+      moveStyle = "select a chess piece";
+      break;
+  }
+
+  let result = document.querySelector("#resultadopecaxadrez");
+  result.textContent = moveStyle;
 }
