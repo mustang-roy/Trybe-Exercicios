@@ -5,6 +5,7 @@ var botaoDiv = document.querySelector("#divisao");
 var botaoMod = document.querySelector("#module");
 var botaoComp2 = document.querySelector("#compare2")
 var botaoComp3 = document.querySelector("#compare3")
+var botaoIsZero = document.querySelector("#isitzero")
 
 
 botaoSoma.addEventListener("click", adicao);
@@ -14,6 +15,8 @@ botaoDiv.addEventListener("click",divisao);
 botaoMod.addEventListener("click",modulo);
 botaoComp2.addEventListener("click",compareDois);
 botaoComp3.addEventListener("click",compareTres);
+botaoIsZero.addEventListener("click", valueOrZero);
+botaoTriangulo.addEventListener
 
 
 
@@ -81,7 +84,26 @@ function compareTres() {
   let maximo = elementoscomp.reduce(function(a, b){
     return Math.max(a,b)
   });
-  
+
   let result = document.querySelector("#resultadocomparacao3");
   result.textContent = maximo;
 };
+
+function valueOrZero() {
+  let elemento = document.querySelector("#elementoisitzero").value;
+  let valor = null;
+  if (Number(elemento) > 0) {
+    valor = "positive";
+  } else if (Number(elemento) < 0){
+    valor = "negative";
+  } else {
+    valor = "zero";
+  }
+
+  result = document.querySelector("#resultadoisitzero");
+  result.textContent = valor;
+}
+
+function checkTriangulo() {
+  
+}
