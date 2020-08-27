@@ -8,6 +8,7 @@ var botaoComp3 = document.querySelector("#compare3");
 var botaoIsZero = document.querySelector("#isitzero");
 var botaoTriangulo = document.querySelector("#triangulo");
 var botaoPecaXadrez = document.querySelector("#pecaxadrez");
+var botaoNotamene = document.querySelector("#notamene");
 
 
 botaoSoma.addEventListener("click", adicao);
@@ -20,6 +21,7 @@ botaoComp3.addEventListener("click",compareTres);
 botaoIsZero.addEventListener("click", valueOrZero);
 botaoTriangulo.addEventListener("click", checkTriangulo);
 botaoPecaXadrez.addEventListener("click", movChessPiece);
+botaoNotamene.addEventListener("click", converterNota);
 
 
 
@@ -168,4 +170,41 @@ function movChessPiece() {
 
   let result = document.querySelector("#resultadopecaxadrez");
   result.textContent = moveStyle;
+}
+
+function converterNota() {
+  let elemento = Number(document.getElementById("elementonotamene").value);
+  let elementoTrunc = Math.trunc(elemento/10);
+  let notaLetter = null;
+
+  if ((elemento<0) || (elemento>100)) {
+    notaLetter = "Nota Inválida";
+  } else {
+    switch (elementoTrunc) {
+      case (10):
+        notaLetter = "A";      
+        break;
+      case (9):
+        notaLetter = "A";      
+        break;
+      case (8):
+        notaLetter = "B";      
+        break;
+      case (7):
+        notaLetter = "C";      
+        break;
+      case (6):
+        notaLetter = "D";      
+        break;
+      case (5):
+        notaLetter = "E";      
+        break;    
+      default:
+        notaLetter = "F";
+        break;
+    }
+  }
+
+  let result = document.querySelector("#resultadonotamene");
+  result.textContent = notaLetter;
 }
