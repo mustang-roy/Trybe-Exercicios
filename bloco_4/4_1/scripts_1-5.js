@@ -6,6 +6,7 @@ var botaoMod = document.querySelector("#module");
 var botaoComp2 = document.querySelector("#compare2")
 var botaoComp3 = document.querySelector("#compare3")
 var botaoIsZero = document.querySelector("#isitzero")
+var botaoTriangulo = document.querySelector("#triangulo")
 
 
 botaoSoma.addEventListener("click", adicao);
@@ -16,7 +17,7 @@ botaoMod.addEventListener("click",modulo);
 botaoComp2.addEventListener("click",compareDois);
 botaoComp3.addEventListener("click",compareTres);
 botaoIsZero.addEventListener("click", valueOrZero);
-botaoTriangulo.addEventListener
+botaoTriangulo.addEventListener("click", checkTriangulo)
 
 
 
@@ -100,10 +101,28 @@ function valueOrZero() {
     valor = "zero";
   }
 
-  result = document.querySelector("#resultadoisitzero");
+  let result = document.querySelector("#resultadoisitzero");
   result.textContent = valor;
 }
 
 function checkTriangulo() {
-  
+  let elementoscomp = [];
+  elementoscomp.push(Number(document.getElementById('elemento1triangulo').value));
+  elementoscomp.push(Number(document.getElementById('elemento2triangulo').value));
+  elementoscomp.push(Number(document.getElementById('elemento3triangulo').value));
+
+  let resultadoBooleano = null
+
+  let somaAngulo = elementoscomp.reduce(function(a,b){
+    return a + b;
+  });
+
+  if (somaAngulo === 180) {
+    resultadoBooleano = true;
+  } else {
+    resultadoBooleano = false;
+  }
+
+  let result = document.querySelector("#resultadotriangulo");
+  result.textContent = resultadoBooleano;
 }
