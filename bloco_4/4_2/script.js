@@ -68,15 +68,15 @@ function quickSortBasic(array) {
     return array;
   }
 
-  var pivot = array[0];
+  var pivot = Number(array[0]);
   var lesserArray = [];
   var greaterArray = [];
 
   for (var i = 1; i < array.length; i++) {
-    if ( array[i] > pivot ) {
-      greaterArray.push(array[i]);
+    if ( Number(array[i]) > Number(pivot) ) {
+      greaterArray.push(Number(array[i]));
     } else {
-      lesserArray.push(array[i]);
+      lesserArray.push(Number(array[i]));
     }
   }
 
@@ -115,6 +115,8 @@ function funcaoQ10(array1) {
   
 }
 
-console.log(funcaoQ10(numbers))
+console.log(funcaoQ9(numbers))
+console.log(funcaoQ8(numbers))
+
 
 
