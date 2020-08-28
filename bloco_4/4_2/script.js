@@ -115,8 +115,4 @@ function funcaoQ10(array1) {
   
 }
 
-console.log(funcaoQ9(numbers))
-console.log(funcaoQ8(numbers))
-
-
-
+console.log(funcaoQ#(numbers))
