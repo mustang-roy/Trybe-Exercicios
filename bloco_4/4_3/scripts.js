@@ -66,4 +66,14 @@ function quest05(number) {
   }
 }
 
-quest05(7)
+function quest06(number) {
+  let divisores = 0;
+  for (let index = 1; index <= number; index++) {
+    if (number%index === 0){
+      divisores +=1
+    }
+  }
+
+  divisores > 2 ? console.log("Não é Primo") : console.log("É Primo")
+
+}
