@@ -68,6 +68,16 @@ function repeatCount(array) {
   return moreRepeat.element
 }
 
+function summation(number) {
+  let sumToNumber = 0;
+
+  for (let index = 1; index <= number; index+=1) {
+    sumToNumber += index;    
+  }
+
+  return sumToNumber;
+}
+
 let arrayTeste = [2, 3, 2, 5, 8, 2, 3, 3, 3];
 
-console.log(repeatCount(arrayTeste))
+console.log(summation(6))
