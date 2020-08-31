@@ -78,6 +78,14 @@ function summation(number) {
   return sumToNumber;
 }
 
-let arrayTeste = [2, 3, 2, 5, 8, 2, 3, 3, 3];
+function verifyEnd(word, wordEnd) {
+  wordIsEnd = true;
 
-console.log(summation(6))
+  for (let index = 1; index <= wordEnd.length; index+=1) {
+    if (wordEnd[wordEnd.length-index] !== word[word.length-index]) {
+      wordIsEnd = false
+    }
+  }
+
+  return wordIsEnd;
+}
