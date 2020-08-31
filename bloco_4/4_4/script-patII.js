@@ -44,13 +44,30 @@ function maxLength(array) {
 }
 
 function repeatCount(array) {
-  for (let index = 0; index < array.length; index++) {
-    for (let index2 = 0; index2 < array.length; index2++) {
-          
-    }    
+  moreRepeat = {
+    element: array[0],
+    repeat: 1
   }
+
+  for (let index = 0; index < array.length; index+=1) {
+    let count ={
+      element: array[index],
+      repeat: 0
+    };
+    for (let index2 = 0; index2 < array.length; index2+=1) {
+        if (count.element === array[index2]) {
+          count.repeat+=1;
+        }
+    }    
+      if (count.repeat > moreRepeat.repeat) {
+        moreRepeat.element = count.element
+        moreRepeat.repeat = count.repeat;
+      }
+  }
+
+  return moreRepeat.element
 }
 
-let arrayTeste = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+let arrayTeste = [2, 3, 2, 5, 8, 2, 3, 3, 3];
 
-console.log(maxLength(arrayTeste))
+console.log(repeatCount(arrayTeste))
