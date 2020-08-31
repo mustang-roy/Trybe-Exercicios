@@ -1,4 +1,3 @@
-# Esse exercício refere-se a uma prática de HTML5(introdutório)
+# Exercícios Trybe
 
-as atividades aqui desenvolvidas são referentes ao link abaixo:
-https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-html/pc/challenge-write-a-poem
+## As atividades aqui desenvolvidas fazem parte do conteúdo de formação para Desenvolvedor Web Full-Stack proposta pela Trybe
