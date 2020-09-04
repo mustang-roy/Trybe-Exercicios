@@ -10,3 +10,7 @@ document.getElementsByTagName('body')[0].appendChild(divMain);
 let divCenter = document.createElement('div')
 divCenter.className = 'center-content'
 divMain.appendChild(divCenter)
+
+let paragraphText = document.createElement('p')
+paragraphText.innerHTML = 'bolinha'
+divCenter.appendChild(paragraphText)
