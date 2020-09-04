@@ -6,3 +6,7 @@ document.getElementsByTagName('body')[0].appendChild(titlesPage);
 let divMain = document.createElement('div');
 divMain.className = 'main-content'
 document.getElementsByTagName('body')[0].appendChild(divMain);
+
+let divCenter = document.createElement('div')
+divCenter.className = 'center-content'
+divMain.appendChild(divCenter)
