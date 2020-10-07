@@ -1,5 +1,25 @@
 {
   "dependencies": {
-    "bootstrap": "^4.5.2"
-  }
+    "bootstrap": "^4.5.2",
+    "node-fetch": "^2.6.1"
+  },
+  "name": "Trybe-Exercicios",
+  "description": "## As atividades aqui desenvolvidas fazem parte do conteúdo de formação para Desenvolvedor Web Full-Stack proposta pela Trybe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustang-roy/Trybe-Exercicios.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mustang-roy/Trybe-Exercicios/issues"
+  },
+  "homepage": "https://github.com/mustang-roy/Trybe-Exercicios#readme"
 }
